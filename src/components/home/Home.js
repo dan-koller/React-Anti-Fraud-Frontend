@@ -45,6 +45,7 @@ class Home extends Component {
                     <Grid stackable columns={1}>
                         <Grid.Row>
                             <Grid.Column textAlign='center'>
+                                <Segment color="blue">
                                 <p>
                                     This project demonstrates (in a simplified
                                     form) the principles of anti-fraud systems
@@ -62,6 +63,7 @@ class Home extends Component {
                                     </a>
                                     .
                                 </p>
+                                </Segment>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

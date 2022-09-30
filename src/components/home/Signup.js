@@ -92,7 +92,7 @@ class Signup extends Component {
                                     name='name'
                                     icon='address card'
                                     iconPosition='left'
-                                    placeholder='Name'
+                                    placeholder='Full Name'
                                     onChange={this.handleInputChange}
                                 />
                                 <Form.Input

@@ -51,7 +51,7 @@ function Navbar() {
     return (
         <Menu
             inverted
-            color='teal'
+            color='blue'
             stackable
             size='massive'
             style={{ borderRadius: 0 }}

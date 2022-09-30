@@ -99,7 +99,7 @@ class Login extends Component {
                             </Segment>
                         </Form>
                         <Message>
-                            {`Don't have already an account? `}
+                            {`Don't have an account? `}
                             <a
                                 href='/signup'
                                 color='teal'
