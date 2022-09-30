@@ -84,7 +84,7 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://raw.githubusercontent.com/dan-koller/Spring-Code-Sharing-Platform/main/img.png'
-                                    style={{ marginTop: "2em" }}
+                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>
@@ -102,7 +102,7 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://dan-koller.github.io/src/images/api-coding.jpg'
-                                    style={{ marginTop: "2em" }}
+                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>
@@ -120,7 +120,7 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://raw.githubusercontent.com/dan-koller/Flask-Weather-App/main/res/weather-app-screenshot.png'
-                                    style={{ marginTop: "2em" }}
+                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>
