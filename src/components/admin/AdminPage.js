@@ -67,10 +67,12 @@ class AdminPage extends Component {
 
         const username = this.state.userUsernameSearch;
         antiFraudApi
-            .getUsers(user, username)
+            .getUserList(user, username)
             .then((response) => {
-                const data = response.data;
-                const users = data instanceof Array ? data : [data];
+                // Get the all the username that match or partially match the search ignoring case
+                const users = response.data.filter((user) =>
+                    user.username.toLowerCase().includes(username.toLowerCase())
+                );
                 this.setState({ users });
             })
             .catch((error) => {

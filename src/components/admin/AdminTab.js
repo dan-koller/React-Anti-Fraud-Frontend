@@ -1,5 +1,6 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
+import AddUserForm from "./AddUserForm";
 import UserTable from "./UserTable";
 
 function AdminTab(props) {
@@ -32,13 +33,7 @@ function AdminTab(props) {
             menuItem: { key: "users", icon: "user plus", content: "Add user" },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
-                    <UserTable
-                        users={users}
-                        userUsernameSearch={userUsernameSearch}
-                        handleInputChange={handleInputChange}
-                        handleDeleteUser={handleDeleteUser}
-                        handleSearchUser={handleSearchUser}
-                    />
+                    <AddUserForm />
                 </Tab.Pane>
             ),
         },
