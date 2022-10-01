@@ -56,10 +56,10 @@ function updateUserRole(user, username, role) {
 }
 
 // Update access level of an existing user (LOCK/UNLOCK)
-function updateUserAccess(user, username, access) {
+function updateUserAccess(user, username, operation) {
     return instance.put(
         "/api/auth/access",
-        { username, access },
+        { username, operation },
         { headers: { Authorization: basicAuth(user) } }
     );
 }

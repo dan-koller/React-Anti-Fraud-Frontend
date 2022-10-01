@@ -1,6 +1,7 @@
 import React from "react";
 import { Tab } from "semantic-ui-react";
 import AddUserForm from "./AddUserForm";
+import UpdateAccessForm from "./UpdateAccessForm";
 import UpdateRoleForm from "./UpdateRoleForm";
 import UserTable from "./UserTable";
 
@@ -58,13 +59,7 @@ function AdminTab(props) {
             },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
-                    <UserTable
-                        users={users}
-                        userUsernameSearch={userUsernameSearch}
-                        handleInputChange={handleInputChange}
-                        handleDeleteUser={handleDeleteUser}
-                        handleSearchUser={handleSearchUser}
-                    />
+                    <UpdateAccessForm />
                 </Tab.Pane>
             ),
         },
