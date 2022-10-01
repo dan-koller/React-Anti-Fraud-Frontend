@@ -49,8 +49,8 @@ function getUserList(user) {
 // Update role of an existing user
 function updateUserRole(user, username, role) {
     return instance.put(
-        `/api/users/${username}`,
-        { role },
+        "/api/auth/role",
+        { username, role },
         { headers: { Authorization: basicAuth(user) } }
     );
 }
@@ -58,8 +58,8 @@ function updateUserRole(user, username, role) {
 // Update access level of an existing user (LOCK/UNLOCK)
 function updateUserAccess(user, username, access) {
     return instance.put(
-        `/api/users/${username}`,
-        { access },
+        "/api/auth/access",
+        { username, access },
         { headers: { Authorization: basicAuth(user) } }
     );
 }

@@ -55,9 +55,6 @@ class AddUserForm extends Component {
 
     render() {
         const { username, password, name, isError, isUserAdded } = this.state;
-
-        console.log("isUserAdded: ", isUserAdded);
-
         return (
             <Form
                 onSubmit={this.handleSubmit}
@@ -86,7 +83,6 @@ class AddUserForm extends Component {
                     value={password}
                     onChange={this.handleInputChange}
                 />
-
                 {isUserAdded && (
                     <Message positive>
                         <Message.Header>User added</Message.Header>
