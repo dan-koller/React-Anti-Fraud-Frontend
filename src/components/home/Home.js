@@ -45,24 +45,25 @@ class Home extends Component {
                     <Grid stackable columns={1}>
                         <Grid.Row>
                             <Grid.Column textAlign='center'>
-                                <Segment color="blue">
-                                <p>
-                                    This project demonstrates (in a simplified
-                                    form) the principles of anti-fraud systems
-                                    in the financial sector. For this project,
-                                    we will work on a system with an expanded
-                                    role model, a set of REST endpoints
-                                    responsible for interacting with users, and
-                                    an internal transaction validation logic
-                                    based on a set of heuristic rules.
-                                </p>
-                                <p>
-                                    You can find the complete code on{" "}
-                                    <a href='https://github.com/dan-koller/Spring-Anti-Fraud-System'>
-                                        Github
-                                    </a>
-                                    .
-                                </p>
+                                <Segment color='teal'>
+                                    <p>
+                                        This project demonstrates (in a
+                                        simplified form) the principles of
+                                        anti-fraud systems in the financial
+                                        sector. For this project, we will work
+                                        on a system with an expanded role model,
+                                        a set of REST endpoints responsible for
+                                        interacting with users, and an internal
+                                        transaction validation logic based on a
+                                        set of heuristic rules.
+                                    </p>
+                                    <p>
+                                        You can find the complete code on{" "}
+                                        <a href='https://github.com/dan-koller/Spring-Anti-Fraud-System'>
+                                            Github
+                                        </a>
+                                        .
+                                    </p>
                                 </Segment>
                             </Grid.Column>
                         </Grid.Row>
@@ -84,7 +85,11 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://raw.githubusercontent.com/dan-koller/Spring-Code-Sharing-Platform/main/img.png'
-                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
+                                    style={{
+                                        marginTop: "2em",
+                                        height: "150px",
+                                        resizeMode: "contain",
+                                    }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>
@@ -102,7 +107,11 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://dan-koller.github.io/src/images/api-coding.jpg'
-                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
+                                    style={{
+                                        marginTop: "2em",
+                                        height: "150px",
+                                        resizeMode: "contain",
+                                    }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>
@@ -120,7 +129,11 @@ class Home extends Component {
                             <Grid.Column textAlign='center'>
                                 <Image
                                     src='https://raw.githubusercontent.com/dan-koller/Flask-Weather-App/main/res/weather-app-screenshot.png'
-                                    style={{ marginTop: "2em", height: "150px", resizeMode: "contain" }}
+                                    style={{
+                                        marginTop: "2em",
+                                        height: "150px",
+                                        resizeMode: "contain",
+                                    }}
                                 />
                                 <div class='card-body text-center'>
                                     <h6 class='card-title'>

@@ -112,7 +112,7 @@ class Signup extends Component {
                                     type='password'
                                     onChange={this.handleInputChange}
                                 />
-                                <Button color='blue' fluid size='large'>
+                                <Button color='teal' fluid size='large'>
                                     Signup
                                 </Button>
                             </Segment>
