@@ -68,7 +68,7 @@ function updateUserAccess(user, username, operation) {
 
 // Post new transaction
 function postTransaction(user, transaction) {
-    return instance.post("/api/transactions", transaction, {
+    return instance.post("/api/antifraud/transaction", transaction, {
         // User must be authenticated
         headers: {
             Authorization: basicAuth(user),

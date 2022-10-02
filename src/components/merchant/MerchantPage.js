@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import AuthContext from "../context/AuthContext";
-import { antiFraudApi } from "../misc/AntiFraudApi";
-import { handleLogError } from "../misc/Helpers";
+import MerchantTab from "./MerchantTab";
 
 class MerchantPage extends Component {
     static contextType = AuthContext;
@@ -19,18 +18,13 @@ class MerchantPage extends Component {
         this.setState({ isUser });
     }
 
-    // handleInputChange = (e, { name, value }) => {
-    //     this.setState({ [name]: value });
-    // };
-
     render() {
         if (!this.state.isUser) {
             return <Redirect to='/' />;
         } else {
             return (
-                <Container text>
-                    <h1>This is the merchant page</h1>
-                    <p>Currently this site is under construction.</p>
+                <Container>
+                    <MerchantTab />
                 </Container>
             );
         }

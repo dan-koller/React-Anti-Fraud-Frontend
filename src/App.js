@@ -18,6 +18,7 @@ function App() {
                 <Route path='/' exact component={Home} />
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
+                {/* TODO: Add routes for contact and about pages */}
                 <PrivateRoute path='/admin' component={AdminPage} />
                 <PrivateRoute path='/merchant' component={MerchantPage} />
                 <PrivateRoute path='/support' component={SupportPage} />
