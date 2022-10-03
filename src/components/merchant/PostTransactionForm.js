@@ -54,10 +54,26 @@ class PostTransactionForm extends Component {
         );
     };
 
+    setClientIpAddr = () => {
+        const providerUrl = "https://api.ipify.org?format=json";
+
+        fetch(providerUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({ ip: data.ip });
+            })
+            .catch((error) => {
+                handleLogError(error);
+            });
+    };
+
     componentDidMount() {
         // Set the state of the date field to the current date
         const date = this.getCurrentDate();
         this.setState({ date });
+
+        // Set the state of the ip field to the client's IP address
+        this.setClientIpAddr();
     }
 
     handleInputChange = (e, { name, value }) => {
@@ -112,6 +128,23 @@ class PostTransactionForm extends Component {
             });
     };
 
+    reset = () => {
+        this.setState({
+            amount: "",
+            ip: "",
+            number: "",
+            name: "",
+            region: "",
+            date: "",
+            isError: false,
+            errorMessage: "",
+            responseMessage: "",
+            isTransactionPosted: false,
+        });
+
+        window.location.reload();
+    };
+
     render() {
         const {
             amount,
@@ -136,18 +169,11 @@ class PostTransactionForm extends Component {
                     onChange={this.handleInputChange}
                 />
                 <Form.Input
-                    label='IP address'
-                    name='ip'
-                    required={true}
-                    value={ip}
-                    onChange={this.handleInputChange}
-                />
-                <Form.Input
                     label='Card number'
                     name='number'
                     inputMode='numeric'
                     pattern='[0-9\s]{13,19}'
-                    autocomplete='cc-number'
+                    autoComplete='cc-number'
                     maxLength='19'
                     required={true}
                     value={number}
@@ -163,14 +189,19 @@ class PostTransactionForm extends Component {
                     multiple={false}
                     required={true}
                     onChange={this.handleInputChange}
+                    clearable={true}
                 />
                 <br />
                 {isTransactionPosted && (
                     <Message positive>
                         <Message.Header>Transaction posted</Message.Header>
                         <p>Transaction submitted successfully.</p>
-                        <p>Result: {JSON.stringify(responseMessage.result)}</p>
-                        <p>Reason: {JSON.stringify(responseMessage.info)}</p>
+                        <p>
+                            Result: {JSON.stringify(responseMessage.result)}{" "}
+                            {responseMessage.info !== "none" && (
+                                <span>Info: {responseMessage.info}</span>
+                            )}
+                        </p>
                     </Message>
                 )}
                 {isError && (
@@ -182,7 +213,13 @@ class PostTransactionForm extends Component {
                         </p>
                     </Message>
                 )}
-                <Button type='submit'>Post transaction</Button>
+                <Button positive type='submit'>
+                    Post transaction
+                </Button>
+                {/* Reload form to reset the state */}
+                <Button negative type='button' onClick={this.reset}>
+                    Reset
+                </Button>
             </Form>
         );
     }
