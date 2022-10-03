@@ -129,19 +129,6 @@ class PostTransactionForm extends Component {
     };
 
     reset = () => {
-        this.setState({
-            amount: "",
-            ip: "",
-            number: "",
-            name: "",
-            region: "",
-            date: "",
-            isError: false,
-            errorMessage: "",
-            responseMessage: "",
-            isTransactionPosted: false,
-        });
-
         window.location.reload();
     };
 
