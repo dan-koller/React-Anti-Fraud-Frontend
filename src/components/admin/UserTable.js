@@ -27,7 +27,8 @@ function UserTable({
                             color='red'
                             size='small'
                             icon='trash'
-                            disabled={user.username === "admin"}
+                            // Disable delete button for admin user
+                            disabled={user.role === "ADMINISTRATOR"}
                             onClick={() => handleDeleteUser(user.username)}
                         />
                     </Table.Cell>
