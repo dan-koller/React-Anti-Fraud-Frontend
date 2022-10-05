@@ -71,13 +71,13 @@ class ManageIpForm extends Component {
                 <h2>Manage suspicious IPs</h2>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Input
-                        label='Add IP'
                         name='ip'
                         value={ip}
                         onChange={this.handleInputChange}
-                        placeholder='IP'
+                        placeholder='Add IP address here...'
+                        action={{ color: "teal", content: "Submit" }}
                     />
-                    <Form.Button content='Submit' />
+                    {/* <Form.Button content='Submit' /> */}
                 </Form>
                 {isError && <Message negative>{errorMessage}</Message>}
                 {isIpUpdated && <Message positive>IP access updated!</Message>}
