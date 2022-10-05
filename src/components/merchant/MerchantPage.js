@@ -8,7 +8,7 @@ class MerchantPage extends Component {
     static contextType = AuthContext;
 
     state = {
-        isUser: true,
+        isUser: true, //TODO: Change to isMerchant
     };
 
     componentDidMount() {

@@ -4,7 +4,7 @@ import { config } from "../../Constants";
 export const antiFraudApi = {
     authenticate,
     signup,
-    // Administator
+    // Administrator
     deleteUser,
     getUserList,
     updateUserRole,
@@ -12,6 +12,13 @@ export const antiFraudApi = {
     // Merchant
     postTransaction,
     // Support
+    getSuspiciousIps,
+    deleteSuspiciousIp,
+    postSuspiciousIp,
+    postOrDeleteStolenCard,
+    getTransactionHistory,
+    getFullTransactionHistory,
+    reviewTransaction,
 };
 
 // Authenticate user
@@ -79,11 +86,29 @@ function postTransaction(user, transaction) {
 
 // -- Support tasks --
 
-// Post or Delete a suspicious ip address based on the selected action (ADD/REMOVE)
-function postOrDeleteSuspiciousIp(user, ip, action) {
-    return instance[action](`/api/suspicious/${ip}`, null, {
+// Get suspicious ip addresses
+function getSuspiciousIps(user) {
+    return instance.get("/api/antifraud/suspicious-ip", {
         headers: { Authorization: basicAuth(user) },
     });
+}
+
+// Delete a suspicious ip address
+function deleteSuspiciousIp(user, ip) {
+    return instance.delete(`/api/antifraud/suspicious-ip/${ip}`, {
+        headers: { Authorization: basicAuth(user) },
+    });
+}
+
+// Post a suspicious ip address
+function postSuspiciousIp(user, ip) {
+    return instance.post(
+        "/api/antifraud/suspicious-ip",
+        { ip },
+        {
+            headers: { Authorization: basicAuth(user) },
+        }
+    );
 }
 
 // Post or Delete a stolen card based on the selected action (ADD/REMOVE)
