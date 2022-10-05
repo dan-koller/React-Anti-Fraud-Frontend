@@ -46,7 +46,7 @@ function SupportTab(props) {
         {
             menuItem: {
                 key: "users",
-                icon: "key",
+                icon: "unlock alternate",
                 content: "Manage IP addresses",
             },
             render: () => (
@@ -68,7 +68,7 @@ function SupportTab(props) {
         {
             menuItem: {
                 key: "users",
-                icon: "unlock alternate",
+                icon: "credit card",
                 content: "Manage cards",
             },
             render: () => (
@@ -80,25 +80,25 @@ function SupportTab(props) {
         {
             menuItem: {
                 key: "users",
-                icon: "unlock alternate",
+                icon: "euro sign",
                 content: "Transactions",
             },
             render: () => (
                 // TODO: Implement search like user search
                 <Tab.Pane loading={isUsersLoading}>
-                    <p>Transactions</p>
+                    <p>Manage Transactions</p>
                 </Tab.Pane>
             ),
         },
         {
             menuItem: {
                 key: "users",
-                icon: "unlock alternate",
+                icon: "handshake",
                 content: "Review transactions",
             },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
-                    <p>Review transactions</p>
+                    <p>List transactions</p>
                 </Tab.Pane>
             ),
         },
