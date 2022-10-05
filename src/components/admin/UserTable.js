@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button, Input, Table } from "semantic-ui-react";
 
 function UserTable({
+    isSupport,
     users,
     userUsernameSearch,
     handleInputChange,
@@ -21,17 +22,20 @@ function UserTable({
         userList = users.map((user) => {
             return (
                 <Table.Row key={user.id}>
-                    <Table.Cell collapsing>
-                        <Button
-                            circular
-                            color='red'
-                            size='small'
-                            icon='trash'
-                            // Disable delete button for admin user
-                            disabled={user.role === "ADMINISTRATOR"}
-                            onClick={() => handleDeleteUser(user.username)}
-                        />
-                    </Table.Cell>
+                    {/* If user isSupport, don't show delete button */}
+                    {!isSupport && (
+                        <Table.Cell collapsing>
+                            <Button
+                                circular
+                                color='red'
+                                size='small'
+                                icon='trash'
+                                // Disable delete button for admin user
+                                disabled={user.role === "ADMINISTRATOR"}
+                                onClick={() => handleDeleteUser(user.username)}
+                            />
+                        </Table.Cell>
+                    )}
                     <Table.Cell>{user.id}</Table.Cell>
                     <Table.Cell>{user.username}</Table.Cell>
                     <Table.Cell>{user.name}</Table.Cell>
@@ -55,7 +59,7 @@ function UserTable({
             <Table compact striped selectable>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell width={1} />
+                        {!isSupport && <Table.HeaderCell width={1} />}
                         <Table.HeaderCell width={1}>ID</Table.HeaderCell>
                         <Table.HeaderCell width={3}>Username</Table.HeaderCell>
                         <Table.HeaderCell width={4}>Name</Table.HeaderCell>
