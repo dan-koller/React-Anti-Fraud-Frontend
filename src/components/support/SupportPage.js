@@ -11,9 +11,11 @@ class SupportPage extends Component {
 
     state = {
         users: [],
-        ips: [],
         userUsernameSearch: "",
+        ips: [],
         ipAddressSearch: "",
+        cards: [],
+        cardNumberSearch: "",
         isSupport: true,
         isUsersLoading: false,
     };
@@ -26,6 +28,7 @@ class SupportPage extends Component {
 
         this.handleGetUsers();
         this.handleGetIps();
+        this.handleGetCards();
     }
 
     handleInputChange = (e, { name, value }) => {
@@ -119,6 +122,55 @@ class SupportPage extends Component {
             });
     };
 
+    handleGetCards = () => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        antiFraudApi
+            .getStolenCards(user)
+            .then((response) => {
+                this.setState({ cards: response.data });
+            })
+            .catch((error) => {
+                handleLogError(error);
+                this.setState({ cards: [] });
+            });
+    };
+
+    handleDeleteCard = (card) => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        antiFraudApi
+            .deleteStolenCard(user, card)
+            .then(() => {
+                this.handleGetCards();
+            })
+            .catch((error) => {
+                handleLogError(error);
+            });
+    };
+
+    handleSearchCard = () => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        const cardNumber = this.state.cardNumberSearch;
+        antiFraudApi
+            .getStolenCards(user)
+            .then((response) => {
+                // Get the all the cards that match or partially match the number
+                const cards = response.data.filter((card) =>
+                    card.cardNumber.includes(cardNumber)
+                );
+                this.setState({ cards });
+            })
+            .catch((error) => {
+                handleLogError(error);
+                this.setState({ cards: [] });
+            });
+    };
+
     render() {
         if (!this.state.isSupport) {
             return <Redirect to='/' />;
@@ -130,20 +182,30 @@ class SupportPage extends Component {
                 userUsernameSearch,
                 ips,
                 ipAddressSearch,
+                cards,
+                cardNumberSearch,
             } = this.state;
             return (
                 <Container>
                     <SupportTab
+                        // General
                         isSupport={isSupport}
                         isUsersLoading={isUsersLoading}
+                        handleInputChange={this.handleInputChange}
+                        // Users
                         users={users}
                         userUsernameSearch={userUsernameSearch}
                         handleSearchUser={this.handleSearchUser}
+                        // Ips
                         ips={ips}
                         ipAddressSearch={ipAddressSearch}
                         handleSearchIp={this.handleSearchIp}
                         handleDeleteIp={this.handleDeleteIp}
-                        handleInputChange={this.handleInputChange}
+                        // Cards
+                        cards={cards}
+                        cardNumberSearch={cardNumberSearch}
+                        handleSearchCard={this.handleSearchCard}
+                        handleDeleteCard={this.handleDeleteCard}
                     />
                 </Container>
             );

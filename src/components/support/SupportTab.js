@@ -4,19 +4,28 @@ import UserTable from "../admin/UserTable";
 import AddUserForm from "../admin/AddUserForm";
 import ManageIpForm from "./ManageIpForm";
 import IpTable from "./IpTable";
+import ManageCardForm from "./ManageCardForm";
+import CardTable from "./CardTable";
 
 function SupportTab(props) {
     const { handleInputChange } = props;
     const {
         isSupport,
         isUsersLoading,
+        // User table
         users,
         userUsernameSearch,
         handleSearchUser,
+        // IP table
         ips,
         ipAddressSearch,
         handleSearchIp,
         handleDeleteIp,
+        // Card table
+        cards,
+        cardNumberSearch,
+        handleSearchCard,
+        handleDeleteCard,
     } = props;
     const {} = props;
 
@@ -73,7 +82,17 @@ function SupportTab(props) {
             },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
-                    <p>Manage cards</p>
+                    <ManageCardForm />
+                    <br />
+                    <h3>Cards currently flagged as stolen</h3>
+                    <CardTable
+                        isSupport={isSupport}
+                        cards={cards}
+                        cardNumberSearch={cardNumberSearch}
+                        handleSearchCard={handleSearchCard}
+                        handleDeleteCard={handleDeleteCard}
+                        handleInputChange={handleInputChange}
+                    />
                 </Tab.Pane>
             ),
         },
