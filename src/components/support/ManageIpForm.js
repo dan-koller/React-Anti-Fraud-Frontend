@@ -77,7 +77,6 @@ class ManageIpForm extends Component {
                         placeholder='Add IP address here...'
                         action={{ color: "teal", content: "Submit" }}
                     />
-                    {/* <Form.Button content='Submit' /> */}
                 </Form>
                 {isError && <Message negative>{errorMessage}</Message>}
                 {isIpUpdated && <Message positive>IP access updated!</Message>}
