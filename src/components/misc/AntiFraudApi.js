@@ -15,7 +15,9 @@ export const antiFraudApi = {
     getSuspiciousIps,
     deleteSuspiciousIp,
     postSuspiciousIp,
-    postOrDeleteStolenCard,
+    getStolenCards,
+    deleteStolenCard,
+    postStolenCard,
     getTransactionHistory,
     getFullTransactionHistory,
     reviewTransaction,
@@ -111,11 +113,29 @@ function postSuspiciousIp(user, ip) {
     );
 }
 
-// Post or Delete a stolen card based on the selected action (ADD/REMOVE)
-function postOrDeleteStolenCard(user, card, action) {
-    return instance[action](`/api/stolen/${card}`, null, {
+// Get stolen cards
+function getStolenCards(user) {
+    return instance.get("/api/antifraud/stolencard", {
         headers: { Authorization: basicAuth(user) },
     });
+}
+
+// Delete a stolen card
+function deleteStolenCard(user, number) {
+    return instance.delete(`/api/antifraud/stolencard/${number}`, {
+        headers: { Authorization: basicAuth(user) },
+    });
+}
+
+// Post a stolen card
+function postStolenCard(user, number) {
+    return instance.post(
+        "/api/antifraud/stolencard",
+        { number },
+        {
+            headers: { Authorization: basicAuth(user) },
+        }
+    );
 }
 
 // Get the transaction history of a specific card number
