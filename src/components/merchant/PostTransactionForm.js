@@ -200,11 +200,9 @@ class PostTransactionForm extends Component {
                         </p>
                     </Message>
                 )}
-                <Button positive type='submit'>
-                    Post transaction
-                </Button>
+                <Button type='submit'>Post transaction</Button>
                 {/* Reload form to reset the state */}
-                <Button negative type='button' onClick={this.reset}>
+                <Button type='button' onClick={this.reset}>
                     Reset
                 </Button>
             </Form>
