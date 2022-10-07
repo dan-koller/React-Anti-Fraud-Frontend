@@ -60,7 +60,7 @@ function SupportTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "ips",
                 icon: "unlock alternate",
                 content: "Manage IP addresses",
             },
@@ -82,7 +82,7 @@ function SupportTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "cards",
                 icon: "credit card",
                 content: "Manage cards",
             },
@@ -104,7 +104,7 @@ function SupportTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "transactions",
                 icon: "euro sign",
                 content: "Transactions",
             },
@@ -122,7 +122,7 @@ function SupportTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "reviews",
                 icon: "handshake",
                 content: "Review transactions",
             },
