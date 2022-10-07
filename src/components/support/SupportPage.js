@@ -16,6 +16,7 @@ class SupportPage extends Component {
         ipAddressSearch: "",
         cards: [],
         cardNumberSearch: "",
+        transactions: [],
         isSupport: true,
         isUsersLoading: false,
     };
@@ -29,6 +30,7 @@ class SupportPage extends Component {
         this.handleGetUsers();
         this.handleGetIps();
         this.handleGetCards();
+        this.handleGetTransactions();
     }
 
     handleInputChange = (e, { name, value }) => {
@@ -171,6 +173,37 @@ class SupportPage extends Component {
             });
     };
 
+    handleGetTransactions = () => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        antiFraudApi
+            .getFullTransactionHistory(user)
+            .then((response) => {
+                this.setState({ transactions: response.data });
+            })
+            .catch((error) => {
+                handleLogError(error);
+                this.setState({ transactions: [] });
+            });
+    };
+
+    handleSearchTransaction = () => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        const cardNumber = this.state.cardNumberSearch;
+        antiFraudApi
+            .getTransactionHistory(user, cardNumber)
+            .then((response) => {
+                this.setState({ transactions: response.data });
+            })
+            .catch((error) => {
+                handleLogError(error);
+                this.setState({ transactions: [] });
+            });
+    };
+
     render() {
         if (!this.state.isSupport) {
             return <Redirect to='/' />;
@@ -184,6 +217,7 @@ class SupportPage extends Component {
                 ipAddressSearch,
                 cards,
                 cardNumberSearch,
+                transactions,
             } = this.state;
             return (
                 <Container>
@@ -206,6 +240,9 @@ class SupportPage extends Component {
                         cardNumberSearch={cardNumberSearch}
                         handleSearchCard={this.handleSearchCard}
                         handleDeleteCard={this.handleDeleteCard}
+                        // Transactions
+                        transactions={transactions}
+                        handleSearchTransaction={this.handleSearchTransaction}
                     />
                 </Container>
             );

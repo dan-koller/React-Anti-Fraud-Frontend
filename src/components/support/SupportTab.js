@@ -6,6 +6,7 @@ import ManageIpForm from "./ManageIpForm";
 import IpTable from "./IpTable";
 import ManageCardForm from "./ManageCardForm";
 import CardTable from "./CardTable";
+import TransactionTable from "./TransactionTable";
 
 function SupportTab(props) {
     const { handleInputChange } = props;
@@ -26,6 +27,10 @@ function SupportTab(props) {
         cardNumberSearch,
         handleSearchCard,
         handleDeleteCard,
+        // Transaction table
+        transactions,
+        transactionCardNumberSearch,
+        handleSearchTransaction,
     } = props;
     const {} = props;
 
@@ -103,9 +108,14 @@ function SupportTab(props) {
                 content: "Transactions",
             },
             render: () => (
-                // TODO: Implement search like user search
                 <Tab.Pane loading={isUsersLoading}>
-                    <p>Manage Transactions</p>
+                    <TransactionTable
+                        isSupport={isSupport}
+                        transactions={transactions}
+                        cardNumberSearch={cardNumberSearch}
+                        handleSearchTransaction={handleSearchTransaction}
+                        handleInputChange={handleInputChange}
+                    />
                 </Tab.Pane>
             ),
         },
