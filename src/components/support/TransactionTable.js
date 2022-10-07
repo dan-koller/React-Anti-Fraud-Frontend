@@ -47,7 +47,7 @@ function TransactionTable({
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell width={1}>Amount</Table.HeaderCell>
-                        <Table.HeaderCell width={1}>Date</Table.HeaderCell>
+                        <Table.HeaderCell width={3}>Date</Table.HeaderCell>
                         <Table.HeaderCell width={1}>Feedback</Table.HeaderCell>
                         <Table.HeaderCell width={1}>IP</Table.HeaderCell>
                         <Table.HeaderCell width={1}>
