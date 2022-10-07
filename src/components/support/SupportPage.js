@@ -204,6 +204,20 @@ class SupportPage extends Component {
             });
     };
 
+    handleReviewTransaction = (transaction, feedback) => {
+        const Auth = this.context;
+        const user = Auth.getUser();
+
+        antiFraudApi
+            .reviewTransaction(user, transaction, feedback)
+            .then(() => {
+                this.handleGetTransactions();
+            })
+            .catch((error) => {
+                handleLogError(error);
+            });
+    };
+
     render() {
         if (!this.state.isSupport) {
             return <Redirect to='/' />;
@@ -243,6 +257,7 @@ class SupportPage extends Component {
                         // Transactions
                         transactions={transactions}
                         handleSearchTransaction={this.handleSearchTransaction}
+                        handleReviewTransaction={this.handleReviewTransaction}
                     />
                 </Container>
             );

@@ -7,6 +7,7 @@ import IpTable from "./IpTable";
 import ManageCardForm from "./ManageCardForm";
 import CardTable from "./CardTable";
 import TransactionTable from "./TransactionTable";
+import ReviewTransactionTable from "./ReviewTransactionTable";
 
 function SupportTab(props) {
     const { handleInputChange } = props;
@@ -29,8 +30,8 @@ function SupportTab(props) {
         handleDeleteCard,
         // Transaction table
         transactions,
-        transactionCardNumberSearch,
         handleSearchTransaction,
+        handleReviewTransaction,
     } = props;
     const {} = props;
 
@@ -127,7 +128,15 @@ function SupportTab(props) {
             },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
-                    <p>List transactions</p>
+                    <h3>Pending transaction reviews</h3>
+                    <ReviewTransactionTable
+                        isSupport={isSupport}
+                        transactions={transactions}
+                        cardNumberSearch={cardNumberSearch}
+                        handleSearchTransaction={handleSearchTransaction}
+                        handleReviewTransaction={handleReviewTransaction}
+                        handleInputChange={handleInputChange}
+                    />
                 </Tab.Pane>
             ),
         },
