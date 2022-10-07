@@ -153,11 +153,15 @@ function getFullTransactionHistory(user) {
 }
 
 // Review transactions
-function reviewTransaction(user, transaction) {
+function reviewTransaction(user, transaction, feedback) {
+    const transactionId = transaction.transactionId;
+
     return instance.put(
-        `/api/transactions/${transaction.id}`,
-        { status: transaction.status },
-        { headers: { Authorization: basicAuth(user) } }
+        "/api/antifraud/transaction",
+        { transactionId, feedback },
+        {
+            headers: { Authorization: basicAuth(user) },
+        }
     );
 }
 
