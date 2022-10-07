@@ -139,15 +139,15 @@ function postStolenCard(user, number) {
 }
 
 // Get the transaction history of a specific card number
-function getTransactionHistory(user, card) {
-    return instance.get(`/api/transactions/${card}`, {
+function getTransactionHistory(user, number) {
+    return instance.get(`/api/antifraud/history/${number}`, {
         headers: { Authorization: basicAuth(user) },
     });
 }
 
 // Get the complete transaction history
 function getFullTransactionHistory(user) {
-    return instance.get("/api/transactions", {
+    return instance.get("/api/antifraud/history", {
         headers: { Authorization: basicAuth(user) },
     });
 }
