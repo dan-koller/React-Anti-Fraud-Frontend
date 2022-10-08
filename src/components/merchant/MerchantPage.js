@@ -8,18 +8,18 @@ class MerchantPage extends Component {
     static contextType = AuthContext;
 
     state = {
-        isUser: true, //TODO: Change to isMerchant
+        isMerchant: true,
     };
 
     componentDidMount() {
         const Auth = this.context;
         const user = Auth.getUser();
-        const isUser = user.role === "MERCHANT";
-        this.setState({ isUser });
+        const isMerchant = user.role === "MERCHANT";
+        this.setState({ isMerchant });
     }
 
     render() {
-        if (!this.state.isUser) {
+        if (!this.state.isMerchant) {
             return <Redirect to='/' />;
         } else {
             return (
