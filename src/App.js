@@ -9,6 +9,8 @@ import Signup from "./components/home/Signup";
 import AdminPage from "./components/admin/AdminPage";
 import MerchantPage from "./components/merchant/MerchantPage";
 import SupportPage from "./components/support/SupportPage";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 
 function App() {
     return (
@@ -16,9 +18,10 @@ function App() {
             <Router>
                 <Navbar />
                 <Route path='/' exact component={Home} />
+                <Route path='/about' component={About} />
+                <Route path='/contact' component={Contact} />
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
-                {/* TODO: Add routes for contact and about pages */}
                 <PrivateRoute path='/admin' component={AdminPage} />
                 <PrivateRoute path='/merchant' component={MerchantPage} />
                 <PrivateRoute path='/support' component={SupportPage} />

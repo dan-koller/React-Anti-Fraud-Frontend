@@ -61,6 +61,12 @@ function Navbar() {
                 <Menu.Item as={Link} exact='true' to='/'>
                     Home
                 </Menu.Item>
+                <Menu.Item as={Link} to='/about' style={enterMenuStyle()}>
+                    About
+                </Menu.Item>
+                <Menu.Item as={Link} to='/contact' style={enterMenuStyle()}>
+                    Contact
+                </Menu.Item>
                 <Menu.Item as={Link} to='/admin' style={adminPageStyle()}>
                     Administration
                 </Menu.Item>
