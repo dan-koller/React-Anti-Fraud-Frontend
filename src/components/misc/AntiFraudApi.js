@@ -2,6 +2,7 @@ import axios from "axios";
 import { config } from "../../Constants";
 
 export const antiFraudApi = {
+    // Authentication
     authenticate,
     signup,
     // Administrator

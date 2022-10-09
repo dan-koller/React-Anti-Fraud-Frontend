@@ -25,7 +25,7 @@ class ContactForm extends Component {
 
     // Render the contact form component
     render() {
-        const { name, email, message, isSent } = this.state;
+        const { isSent } = this.state;
         return (
             // Add a header
             <Grid textAlign='center'>

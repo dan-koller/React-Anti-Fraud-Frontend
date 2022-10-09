@@ -31,7 +31,6 @@ class Home extends Component {
                 </Segment>
             );
         } else {
-            const {} = this.state;
             return (
                 <Container text>
                     {/* Main heading */}

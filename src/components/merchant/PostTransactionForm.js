@@ -135,9 +135,7 @@ class PostTransactionForm extends Component {
     render() {
         const {
             amount,
-            ip,
             number,
-            region,
             isError,
             responseMessage,
             isTransactionPosted,

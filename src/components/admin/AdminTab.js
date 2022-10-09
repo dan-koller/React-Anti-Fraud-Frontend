@@ -14,7 +14,6 @@ function AdminTab(props) {
         handleDeleteUser,
         handleSearchUser,
     } = props;
-    const {} = props;
 
     const panes = [
         {
@@ -32,7 +31,7 @@ function AdminTab(props) {
             ),
         },
         {
-            menuItem: { key: "users", icon: "user plus", content: "Add user" },
+            menuItem: { key: "add", icon: "user plus", content: "Add user" },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
                     <AddUserForm />
@@ -41,7 +40,7 @@ function AdminTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "update",
                 icon: "key",
                 content: "Update role",
             },
@@ -53,7 +52,7 @@ function AdminTab(props) {
         },
         {
             menuItem: {
-                key: "users",
+                key: "access",
                 icon: "unlock alternate",
                 content: "Update access",
             },
