@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+    Button,
     Grid,
     Container,
     Image,
@@ -87,20 +88,20 @@ class Home extends Component {
                                     src='https://raw.githubusercontent.com/dan-koller/Spring-Code-Sharing-Platform/main/img.png'
                                     style={{
                                         marginTop: "2em",
+                                        marginBottom: "1em",
                                         height: "150px",
                                         resizeMode: "contain",
                                     }}
                                 />
                                 <div class='card-body text-center'>
-                                    <h6 class='card-title'>
-                                        Code Sharing Platform
-                                    </h6>
-                                    <a
+                                    <h3>Code Sharing Platform</h3>
+                                    <Button
+                                        color='teal'
+                                        as={"a"}
                                         href='https://github.com/dan-koller/Spring-Code-Sharing-Platform'
-                                        class='btn btn-primary btn-sm'
                                     >
                                         Github
-                                    </a>
+                                    </Button>
                                 </div>
                             </Grid.Column>
                             {/* Second project */}
@@ -109,20 +110,20 @@ class Home extends Component {
                                     src='https://dan-koller.github.io/src/images/api-coding.jpg'
                                     style={{
                                         marginTop: "2em",
+                                        marginBottom: "1em",
                                         height: "150px",
                                         resizeMode: "contain",
                                     }}
                                 />
                                 <div class='card-body text-center'>
-                                    <h6 class='card-title'>
-                                        Spring Accounting service
-                                    </h6>
-                                    <a
+                                    <h3>Spring Accounting service</h3>
+                                    <Button
+                                        color='teal'
+                                        as={"a"}
                                         href='https://github.com/dan-koller/Spring-Accounting-Service'
-                                        class='btn btn-primary btn-sm'
                                     >
                                         Github
-                                    </a>
+                                    </Button>
                                 </div>
                             </Grid.Column>
                             {/* Thirdproject */}
@@ -131,20 +132,20 @@ class Home extends Component {
                                     src='https://raw.githubusercontent.com/dan-koller/Flask-Weather-App/main/res/weather-app-screenshot.png'
                                     style={{
                                         marginTop: "2em",
+                                        marginBottom: "1em",
                                         height: "150px",
                                         resizeMode: "contain",
                                     }}
                                 />
                                 <div class='card-body text-center'>
-                                    <h6 class='card-title'>
-                                        Flask Weather App
-                                    </h6>
-                                    <a
+                                    <h3>Flask Weather App</h3>
+                                    <Button
+                                        color='teal'
+                                        as={"a"}
                                         href='https://github.com/dan-koller/Flask-Weather-App'
-                                        class='btn btn-primary btn-sm'
                                     >
                                         Github
-                                    </a>
+                                    </Button>
                                 </div>
                             </Grid.Column>
                         </Grid.Row>
