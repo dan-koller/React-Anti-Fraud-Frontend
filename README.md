@@ -1,4 +1,4 @@
-# React Anti-Fraud frontend
+# React Anti-Fraud Frontend
 
 This is a client side\* frontend for my [Anti-Fraud System](https://github.com/dan-koller/Spring-Anti-Fraud-System) project. It is a [React](https://reactjs.org/) single page application that uses [React Router](https://reacttraining.com/react-router/) for routing. For the UI, it uses [Semantic UI](https://react.semantic-ui.com/) and Axios for HTTP requests.
 
