@@ -30,7 +30,7 @@ class ContactForm extends Component {
             // Add a header
             <Grid textAlign='center'>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <h2>Leave a message</h2>
+                    <h1>Leave a message</h1>
                     <Form size='large' onSubmit={this.handleSubmit}>
                         <Segment>
                             <Form.Input
