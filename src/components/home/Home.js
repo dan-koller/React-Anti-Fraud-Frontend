@@ -92,7 +92,7 @@ class Home extends Component {
                                         resizeMode: "contain",
                                     }}
                                 />
-                                <div class='card-body text-center'>
+                                <div>
                                     <h3>Code Sharing Platform</h3>
                                     <Button
                                         color='teal'
@@ -114,7 +114,7 @@ class Home extends Component {
                                         resizeMode: "contain",
                                     }}
                                 />
-                                <div class='card-body text-center'>
+                                <div>
                                     <h3>Spring Accounting service</h3>
                                     <Button
                                         color='teal'
@@ -136,7 +136,7 @@ class Home extends Component {
                                         resizeMode: "contain",
                                     }}
                                 />
-                                <div class='card-body text-center'>
+                                <div>
                                     <h3>Flask Weather App</h3>
                                     <Button
                                         color='teal'

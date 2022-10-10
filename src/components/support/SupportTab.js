@@ -33,7 +33,6 @@ function SupportTab(props) {
         handleSearchTransaction,
         handleReviewTransaction,
     } = props;
-    const {} = props;
 
     const panes = [
         {
@@ -51,7 +50,7 @@ function SupportTab(props) {
             ),
         },
         {
-            menuItem: { key: "users", icon: "user plus", content: "Add user" },
+            menuItem: { key: "add", icon: "user plus", content: "Add user" },
             render: () => (
                 <Tab.Pane loading={isUsersLoading}>
                     <AddUserForm />
