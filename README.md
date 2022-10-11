@@ -20,7 +20,13 @@ Clone the repository and install the dependencies.
 
 ```sh
 git clone https://github.com/dan-koller/React-Anti-Fraud-Frontend.git
-cd react-anti-fraud-frontend
+```
+
+```sh
+cd React-Anti-Fraud-Frontend
+```
+
+```sh
 npm install
 ```
 
