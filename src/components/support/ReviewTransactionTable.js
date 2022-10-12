@@ -10,9 +10,12 @@ function ReviewTransactionTable({
 }) {
     let transactionList;
 
-    // Remove all transactions, where the feedback is not empty
+    // Remove all transactions, where the feedback is not empty and result is processed manually
     transactions = transactions.filter((transaction) => {
-        return transaction.feedback === "";
+        return (
+            transaction.feedback === "" &&
+            transaction.result === "MANUAL_PROCESSING"
+        );
     });
 
     if (transactions.length === 0) {
