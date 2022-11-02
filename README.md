@@ -68,4 +68,4 @@ _If you want to learn more about React, check out the [React documentation](http
 
 ## Known issues
 
-If you get CORS errors when trying to post a new transaction as a merchant, you need to disable Adblock/uBlock Origin for the page or add an exception. These extensions are known to block the provider `'ipify.org'` which is used to get the client IP address. Check out [this](https://github.com/dan-koller/React-Anti-Fraud-Frontend/issues/5) issue for more information.
+If you encounter CORS errors when trying to post a new transaction as a merchant, you need to disable Adblock/uBlock Origin for the page or add an exception. These extensions are known to block the provider `'ipify.org'` which is used to get the client IP address. Check out [this](https://github.com/dan-koller/React-Anti-Fraud-Frontend/issues/5) issue for more information.
